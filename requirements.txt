@@ -1,4 +1,4 @@
 poetry
 click==7.1.2
 funcy==1.14
-pytest=5.2
+pytest==5.2
