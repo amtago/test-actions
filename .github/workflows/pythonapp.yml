@@ -30,4 +30,5 @@ jobs:
       env:
         password: ${{ secrets.PYPI_PASSWORD }}
       run: |
+        echo "$env:password"
         poetry publish --username amtago --password "$env:password"
