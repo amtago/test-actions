@@ -25,4 +25,3 @@ jobs:
     - name: Install Poetry Dependencies
       run: |
         # stop the build if there are Python syntax errors or undefined names
-        poetry add click funcy
