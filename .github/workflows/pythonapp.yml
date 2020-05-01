@@ -27,8 +27,9 @@ jobs:
         # stop the build if there are Python syntax errors or undefined names
         poetry build
     - name: Publish Poetry Package
+      shell: bash
       env:
         password: ${{ secrets.PYPI_PASSWORD }}
       run: |
-        echo "$env:password"
-        poetry publish --username amtago --password "$env:password"
+        echo "$password"
+        poetry publish --username amtago --password "$password"
