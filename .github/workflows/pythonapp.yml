@@ -28,6 +28,6 @@ jobs:
         poetry build
     - name: Publish Poetry Package
       env:
-        PYPI_SECRET: ${{ secrets.PYPI_SECRET }}
+        password: ${{ secrets.PYPI_PASSWORD }}
       run: |
-        poetry publish --username amtago --password "$env:PYPI_SECRET"
+        poetry publish --username amtago --password "$env:password"
