@@ -8,7 +8,7 @@ steps:
     settings:
       # Point to your Harbor registry and specific project
       registry: harbor.ewtst.com
-      repo: harbor.ewtst.com/test-project/drone-test-app
+      repo: harbor.ewtst.com/core-services/drone-test-app
       tags: latest
       # Pull the secrets we created in the Drone UI
       username:
