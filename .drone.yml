@@ -1,0 +1,17 @@
+kind: pipeline
+type: kubernetes
+name: build-test
+
+steps:
+  - name: build-and-push
+    image: plugins/kaniko
+    settings:
+      # Point to your Harbor registry and specific project
+      registry: harbor.ewtst.com
+      repo: harbor.ewtst.com/test-project/drone-test-app
+      tags: latest
+      # Pull the secrets we created in the Drone UI
+      username:
+        from_secret: harbor_username
+      password:
+        from_secret: harbor_password
