@@ -1,0 +1,24 @@
+# manifests/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: drone-test-app
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: drone-test-app
+  template:
+    metadata:
+      labels:
+        app: drone-test-app
+    spec:
+      containers:
+      - name: app
+        # Using the exact image path from your successful S3/Harbor push
+        image: harbor.ewtst.com/core-services/drone-test-app:latest
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+      - name: harbor-pull-secret
